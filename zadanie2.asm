@@ -1,8 +1,8 @@
 %include "io.inc"
 
 extern _ExitProcess@4
-extern __write ; (dwa znaki podkreœlenia)
-extern __read; (dwa znaki podkreœlenia)
+extern __write ; (dwa znaki podkreÅ›lenia)
+extern __read; (dwa znaki podkreÅ›lenia)
 extern _MessageBoxA@16
 
 section .text
@@ -10,8 +10,8 @@ global CMAIN
 CMAIN:
     mov ebp, esp
    
-    ; wyœwietlenie tekstu informacyjnego
-    ; liczba znaków tekstu
+    ; wyÅ›wietlenie tekstu informacyjnego
+    ; liczba znakÃ³w tekstu
      mov ecx,(koniec_t) - (tekst_pocz)
      push ecx
      push tekst_pocz
@@ -28,42 +28,42 @@ CMAIN:
     ptl:
      mov dl , magazyn[ebx]
      
-        cmp     dl, 0xE6 ;æ
+        cmp     dl, 0xE6 ;Ä‡
         jne skip1
             mov     dl, 0xC6
             jne     dalej
         skip1:
-        cmp     dl, 0xEA	 ;ê
+        cmp     dl, 0xEA	 ;Ä™
                 jne skip2
             mov     dl, 0xCA
             jne     dalej
         skip2:
-        cmp     dl, 0xB3 ;³
+        cmp     dl, 0xB3 ;Å‚
                 jne skip3
             mov     dl, 0xA3
             jne     dalej
         skip3:
-        cmp     dl, 0xF1 ;ñ
+        cmp     dl, 0xF1 ;Å„
                 jne skip4
             mov     dl, 0xD1
             jne     dalej
         skip4:
-        cmp     dl, 0xF3 ;ó
+        cmp     dl, 0xF3 ;Ã³
                 jne skip5
             mov     dl, 0xD3
             jne     dalej
         skip5:
-        cmp     dl, 0x9C ;œ
+        cmp     dl, 0x9C ;Å›
                 jne skip6
             mov     dl, 0x8C
             jne     dalej
         skip6:
-        cmp     dl, 0x9F ;Ÿ
+        cmp     dl, 0x9F ;Åº
                 jne skip7
             mov     dl, 0xAF
             jne     dalej
         skip7:
-        cmp     dl, 0xBF ;¿
+        cmp     dl, 0xBF ;Å¼
             jne skip8
             mov     dl, 0xAF
             jne     dalej
@@ -75,7 +75,7 @@ CMAIN:
      cmp dl , 'z'
      ja dalej
      sub dl , 0x20 ; zamiana na wielkie litery
-    ; odes³anie znaku do pamiêci
+    ; odesÅ‚anie znaku do pamiÄ™ci
    dalej:
      mov magazyn[ebx], dl 
      inc ebx
@@ -93,7 +93,7 @@ CMAIN:
     
 section .data
 
-tekst_pocz    db 10, 'Proszê napisaæ jakiœ tekst '
+tekst_pocz    db 10, 'ProszÄ™ napisaÄ‡ jakiÅ› tekst '
               db 'i nacisnac Enter', 10
 koniec_t      db 0
 liczba_znakow dd 0
