@@ -8,12 +8,12 @@ section .bss
 section .text
 global CMAIN
 CMAIN:
-;. Napisaæ program w asemblerze, który wyœwietli na ekranie 50 pocz¹tkowych
-;elementów ci¹gu liczb: 1, 2, 4, 7, 11, 16, 22, ... W programie wykorzystaæ podprogram
+;. NapisaÄ‡ program w asemblerze, ktÃ³ry wyÅ›wietli na ekranie 50 poczÄ…tkowych
+;elementÃ³w ciÄ…gu liczb: 1, 2, 4, 7, 11, 16, 22, ... W programie wykorzystaÄ‡ podprogram
 ;wyswietl_EAX
     ;;1 2 3 4 5 6 7 8 9 10 11
     
-    ;;R8–R15 are the new 64-bit registers.
+    ;;R8â€“R15 are the new 64-bit registers.
     mov ecx, 0 ; do 50
     mov edx, 0 ; + 1
     mov eax, 1 
