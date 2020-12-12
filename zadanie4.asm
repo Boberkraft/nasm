@@ -79,20 +79,20 @@ wyswietl:
 wyswietl_EAX_hex:
     pusha
     
-    ; rezerwacja 12 bajtów na stosie (poprzez zmniejszenie
+    ; rezerwacja 12 bajté—š na stosie (poprzez zmniejszenie
     ; rejestru ESP) przeznaczonych na tymczasowe przechowanie
-    ; cyfr szesnastkowych wyœwietlanej liczby
+    ; cyfr szesnastkowych wyî¯ietlanej liczby
     sub esp, 12
     mov edi, esp
-    mov ecx, 8 ; liczba obiegów pêtli konwersji
-    mov esi, 1 ; indeks pocz¹tkowy u¿ywany przy zapisie cyfr
+    mov ecx, 8 ; liczba obiegé—š pçš»li konwersji
+    mov esi, 1 ; indeks poczé–kowy uç¯¡wany przy zapisie cyfr
   ptl3hex:
-    ; przesuniêcie cykliczne (obrót) rejestru EAX o 4 bity w lewo
-    ; w szczególnoœci, w pierwszym obiegu pêtli bity nr 31 - 28
-    ; rejestru EAX zostan¹ przesuniête na pozycje 3 - 0
+    ; przesuniç’šie cykliczne (obré’) rejestru EAX o 4 bity w lewo
+    ; w szczegéŠnoî¯Ši, w pierwszym obiegu pçš»li bity nr 31 - 28
+    ; rejestru EAX zostanï¿½ przesuniçš»e na pozycje 3 - 0
     rol eax, 4
-    ; wyodrêbnienie 4 najm³odszych bitów i odczytanie z tablicy
-    ; 'dekoder' odpowiadaj¹cej im cyfry w zapisie szesnastkowym
+    ; wyodrç‘¿nienie 4 najmé€™dszych bité—š i odczytanie z tablicy
+    ; 'dekoder' odpowiadajé‰ej im cyfry w zapisie szesnastkowym
     mov ebx, eax
     and ebx, 0xF
     mov dl, dekoder[ebx]
@@ -119,9 +119,9 @@ wyswietl_EAX_hex:
     push edi ; adres obszaru roboczego
     push 1
     call __write
-    ; usuniêcie ze stosu 24 bajtów, w tym 12 bajtów zapisanych
+    ; usuniç’šie ze stosu 24 bajté—š, w tym 12 bajté—š zapisanych
     ; przez 3 rozkazy push przed rozkazem call
-    ; i 12 bajtów zarezerwowanych na pocz¹tku podprogramu
+    ; i 12 bajté—š zarezerwowanych na poczé–ku podprogramu
     add esp, 24
    
     popa
